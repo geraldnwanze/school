@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Enums\StatusEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Classroom>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Session>
  */
-class ClassroomFactory extends Factory
+class SessionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +18,9 @@ class ClassroomFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'jss 1a'
+            'from' => '2023',
+            'to' => '2024',
+            'status' => StatusEnum::ACTIVE->value
         ];
     }
 }

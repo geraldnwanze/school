@@ -2,18 +2,16 @@
 
 namespace App\Http\Requests;
 
-use App\Traits\SendValidationErrorsToToast;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateClassroomRequest extends FormRequest
+class StoreStudentClassroomHistoryRequest extends FormRequest
 {
-    use SendValidationErrorsToToast;
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,7 +22,7 @@ class UpdateClassroomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required'
+            //
         ];
     }
 }

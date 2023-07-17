@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Traits\SendValidationErrorsToToast;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateClassroomRequest extends FormRequest
+class UpdateTermRequest extends FormRequest
 {
     use SendValidationErrorsToToast;
     /**
@@ -24,7 +24,7 @@ class UpdateClassroomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required'
+            //
         ];
     }
 }

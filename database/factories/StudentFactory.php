@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Classroom>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Student>
  */
-class ClassroomFactory extends Factory
+class StudentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +18,8 @@ class ClassroomFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'jss 1a'
+            'reg_no' => Str::random(),
+            'password' => 123456
         ];
     }
 }

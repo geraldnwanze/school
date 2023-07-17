@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Classroom;
+use App\Models\Session;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ClassroomSeeder extends Seeder
+class SessionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Classroom::factory()->create();
+        Session::factory()->create();
     }
 }
