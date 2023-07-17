@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Classroom;
+use App\Models\StudentProfile;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class ClassroomPolicy
+class StudentProfilePolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class ClassroomPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Classroom $classroom): bool
+    public function view(User $user, StudentProfile $studentProfile): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class ClassroomPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Classroom $classroom): bool
+    public function update(User $user, StudentProfile $studentProfile): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class ClassroomPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Classroom $classroom): bool
+    public function delete(User $user, StudentProfile $studentProfile): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class ClassroomPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Classroom $classroom): bool
+    public function restore(User $user, StudentProfile $studentProfile): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class ClassroomPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Classroom $classroom): bool
+    public function forceDelete(User $user, StudentProfile $studentProfile): bool
     {
         //
     }

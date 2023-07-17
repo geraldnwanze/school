@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Classroom>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\StudentClassroomHistory>
  */
-class ClassroomFactory extends Factory
+class StudentClassroomHistoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class ClassroomFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'jss 1a'
+            //
         ];
     }
 }

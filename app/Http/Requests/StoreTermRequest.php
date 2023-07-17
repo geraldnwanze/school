@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Traits\SendValidationErrorsToToast;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateClassroomRequest extends FormRequest
+class StoreTermRequest extends FormRequest
 {
     use SendValidationErrorsToToast;
     /**
