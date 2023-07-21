@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentProfileController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +42,13 @@ Route::group(['prefix' => 'students', 'as' => 'students.'], function () {
         Route::get('/edit/{student}', [StudentProfileController::class, 'edit'])->name('edit');
         Route::patch('/update/{studentProfile}', [StudentProfileController::class, 'update'])->name('update');
     });
+});
+
+Route::group(['prefix' => 'subjects', 'as' => 'subjects.'], function () {
+    Route::get('/', [SubjectController::class, 'index'])->name('index');
+    Route::get('/create', [SubjectController::class, 'create'])->name('create');
+    Route::post('/store', [SubjectController::class, 'store'])->name('store');
+    Route::get('/edit/{subject}', [SubjectController::class, 'edit'])->name('edit');
+    Route::patch('/update/{subject}', [SubjectController::class, 'update'])->name('update');
 });
 
