@@ -12,4 +12,7 @@
     <li>
         <a href="{{ route('students.index') }}">students</a>
     </li>
+    <li>
+        <a href="{{ route('subjects.index') }}">subjects</a>
+    </li>
 </ul>
