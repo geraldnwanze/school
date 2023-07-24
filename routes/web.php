@@ -4,6 +4,7 @@ use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentProfileController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,3 +53,10 @@ Route::group(['prefix' => 'subjects', 'as' => 'subjects.'], function () {
     Route::patch('/update/{subject}', [SubjectController::class, 'update'])->name('update');
 });
 
+Route::group(['prefix' => 'teachers', 'as' => 'teachers.'], function () {
+    Route::get('/', [TeacherController::class, 'index'])->name('index');
+    Route::get('/create', [TeacherController::class, 'create'])->name('create');
+    Route::post('/store', [TeacherController::class, 'store'])->name('store');
+    Route::get('/edit/{teacher}', [TeacherController::class, 'edit'])->name('edit');
+    Route::patch('/update/{teacher}', [TeacherController::class, 'update'])->name('update');
+});
