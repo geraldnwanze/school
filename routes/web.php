@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\ClassroomSubjectController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentProfileController;
+use App\Http\Controllers\SubClassroomController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TermController;
@@ -27,6 +29,24 @@ Route::group(['prefix' => 'classrooms', 'as' => 'classrooms.'], function () {
     Route::get('/edit/{classroom}', [ClassroomController::class, 'edit'])->name('edit');
     Route::patch('/update/{classroom}', [ClassroomController::class, 'update'])->name('update');
     Route::delete('/delete/{classroom}', [ClassroomController::class, 'destroy'])->name('destroy');
+});
+
+Route::group(['prefix' => 'sub-classrooms', 'as' => 'sub-classrooms.'], function () {
+    Route::get('/', [SubClassroomController::class, 'index'])->name('index');
+    Route::get('/create', [SubClassroomController::class, 'create'])->name('create');
+    Route::post('/store', [SubClassroomController::class, 'store'])->name('store');
+    Route::get('/edit/{classroom}', [SubClassroomController::class, 'edit'])->name('edit');
+    Route::patch('/update/{classroom}', [SubClassroomController::class, 'update'])->name('update');
+    Route::delete('/delete/{classroom}', [SubClassroomController::class, 'destroy'])->name('destroy');
+});
+
+Route::group(['prefix' => 'classroom-subjects', 'as' => 'classroom-subjects.'], function () {
+    Route::get('/', [ClassroomSubjectController::class, 'index'])->name('index');
+    Route::get('/create', [ClassroomSubjectController::class, 'create'])->name('create');
+    Route::post('/store', [ClassroomSubjectController::class, 'store'])->name('store');
+    Route::get('/edit/{classroom}', [ClassroomSubjectController::class, 'edit'])->name('edit');
+    Route::patch('/update/{classroom}', [ClassroomSubjectController::class, 'update'])->name('update');
+    Route::delete('/delete/{classroom}', [ClassroomSubjectController::class, 'destroy'])->name('destroy');
 });
 
 Route::group(['prefix' => 'students', 'as' => 'students.'], function () {

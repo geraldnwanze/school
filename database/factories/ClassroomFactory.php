@@ -17,7 +17,7 @@ class ClassroomFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'jss 1a'
+            'name' => 'jss 1'
         ];
     }
 }

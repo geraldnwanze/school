@@ -13,6 +13,16 @@ class ClassroomSeeder extends Seeder
      */
     public function run(): void
     {
-        Classroom::factory()->create();
+        $data = [
+            ['name' => 'jss 1'],
+            ['name' => 'jss 2'],
+            ['name' => 'jss 3'],
+            ['name' => 'sss 1'],
+            ['name' => 'sss 2'],
+            ['name' => 'sss 3'],
+        ];
+        for ($i=0; $i < count($data); $i++) {
+            Classroom::create($data[$i]);
+        }
     }
 }
