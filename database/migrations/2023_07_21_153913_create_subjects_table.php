@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('status')->default(StatusEnum::ACTIVE->value);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
