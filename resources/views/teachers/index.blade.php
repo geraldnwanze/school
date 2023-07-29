@@ -20,7 +20,7 @@
                     <td>{{ $teacher->phone }}</td>
                     <td>{{ $teacher->address }}</td>
                     <td>
-                        <img src="{{ asset($teacher->passport) }}" alt="" width="200">
+                        <img src="{{ asset($teacher->passport) }}" alt="" width="200" height="200">
                     </td>
                     <td>{{ $teacher->marital_status }}</td>
                     <td>{{ $teacher->date_of_employment }}</td>
