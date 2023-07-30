@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentProfileController;
 use App\Http\Controllers\SubClassroomController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherClassroomController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherSubjectController;
 use App\Http\Controllers\TermController;
@@ -88,4 +89,12 @@ Route::group(['prefix' => 'teacher-subjects', 'as' => 'teacher-subjects.'], func
     Route::post('/store', [TeacherSubjectController::class, 'store'])->name('store');
     Route::get('/edit/{teacher}', [TeacherSubjectController::class, 'edit'])->name('edit');
     Route::patch('/update/{teacher}', [TeacherSubjectController::class, 'update'])->name('update');
+});
+
+Route::group(['prefix' => 'teacher-classrooms', 'as' => 'teacher-classrooms.'], function () {
+    Route::get('/', [TeacherClassroomController::class, 'index'])->name('index');
+    Route::get('/create', [TeacherClassroomController::class, 'create'])->name('create');
+    Route::post('/store', [TeacherClassroomController::class, 'store'])->name('store');
+    Route::get('/edit/{teacher}', [TeacherClassroomController::class, 'edit'])->name('edit');
+    Route::patch('/update/{teacher}', [TeacherClassroomController::class, 'update'])->name('update');
 });
