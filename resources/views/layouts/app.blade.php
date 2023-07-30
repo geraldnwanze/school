@@ -25,4 +25,7 @@
     <li>
         <a href="{{ route('teacher-subjects.index') }}">teacher subjects</a>
     </li>
+    <li>
+        <a href="{{ route('teacher-classrooms.index') }}">teacher classrooms</a>
+    </li>
 </ul>
