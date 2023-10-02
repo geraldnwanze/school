@@ -11,7 +11,10 @@ class Classroom extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+    public function subClassrooms()
+    {
+        return $this->hasMany(SubClassroom::class);
+    }
 }

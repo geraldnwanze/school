@@ -13,6 +13,20 @@ class TermSeeder extends Seeder
      */
     public function run(): void
     {
-        Term::factory()->create();
+        $values = [
+            [
+                'name' => 'first'
+            ],
+            [
+                'name' => 'second'
+            ],
+            [
+                'name' => 'third'
+            ],
+        ];
+
+        foreach ($values as $value) {
+            Term::create($value);
+        }
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('arms');
             $table->string('status')->default(StatusEnum::ACTIVE->value);
             $table->softDeletes();
             $table->timestamps();

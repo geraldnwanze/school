@@ -17,7 +17,7 @@ class TermAction
                 $term = 'second';
                 break;
 
-            case $month > 4 && $month < 8;
+            case $month > 4 && $month <= 8;
                 $term = 'third';
                 break;
 

@@ -14,7 +14,7 @@ class SubClassroomController extends Controller
      */
     public function index()
     {
-        $sub_classrooms = SubClassroom::with('classroom')->get();
+        $sub_classrooms = SubClassroom::with('classroom')->paginate();
         return view('sub_classrooms.index', compact('sub_classrooms'));
     }
 

@@ -2,13 +2,13 @@
 
 namespace App\Http\Requests;
 
+use App\Traits\SendValidationErrorsToToast;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTeacherRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
+    use SendValidationErrorsToToast;
+    
     public function authorize(): bool
     {
         return true;

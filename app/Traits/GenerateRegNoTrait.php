@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use App\Models\Session;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 trait GenerateRegNoTrait

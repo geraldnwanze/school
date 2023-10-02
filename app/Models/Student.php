@@ -14,8 +14,6 @@ class Student extends Model
 
     protected $guarded = [];
 
-    protected $with = ['profile'];
-
     protected $casts = [
         'status' => StatusEnum::class
     ];
@@ -31,4 +29,15 @@ class Student extends Model
             get: fn ($value, $attributes) => ($attributes['status'] == StatusEnum::ACTIVE->value) ? true : false
         );
     }
+
+    public function account()
+    {
+        return $this->hasOne(Account::class);
+    }
+
+    public function offencePayments()
+    {
+        return $this->hasMany(OffencePayment::class);
+    }
+
 }

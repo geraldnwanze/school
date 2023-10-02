@@ -16,6 +16,12 @@ return [
     |
     */
 
+    'symbols' => [
+        'currency' => [
+            'naira' => '&#8358;'
+        ]
+    ],
+
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
