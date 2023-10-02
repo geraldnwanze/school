@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\GenderEnum;
 use App\Http\Requests\StoreStudentProfileRequest;
 use App\Http\Requests\UpdateStudentProfileRequest;
+use App\Models\Account;
 use App\Models\Classroom;
 use App\Models\Student;
 use App\Models\StudentProfile;
@@ -12,16 +13,12 @@ use Illuminate\Support\Facades\DB;
 
 class StudentProfileController extends Controller
 {
+
     public function show(Student $student)
     {
         return view('students_profile.show', compact('student'));
     }
 
-    public function create(Classroom $class)
-    {
-        $genders = GenderEnum::cases();
-        return view('students_profile.create', compact('genders', 'class'));
-    }
 
     public function store(StoreStudentProfileRequest $request)
     {
@@ -34,6 +31,7 @@ class StudentProfileController extends Controller
             $data = $request->validated();
             $data['student_id'] = $student->id;
             StudentProfile::create($data);
+            Account::create(['student_id' => $student->id]);
             DB::commit();
 
             toast('student created successfully', 'success');
@@ -62,6 +60,12 @@ class StudentProfileController extends Controller
             toast('something went wrong', 'error');
             return back();
         }
+    }
+
+    public function searchByClass()
+    {
+        $id = request()->get('class_id');
+        return StudentProfile::where('classroom_id', $id)->get();
     }
 
 }

@@ -18,9 +18,7 @@ class SessionFactory extends Factory
     public function definition(): array
     {
         return [
-            'from' => '2023',
-            'to' => '2024',
-            'status' => StatusEnum::ACTIVE->value
+
         ];
     }
 }

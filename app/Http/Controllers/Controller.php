@@ -17,4 +17,9 @@ class Controller extends BaseController
         $path = $file->move($folder, $originalName);
         return $path;
     }
+
+    public function deleteImage($url)
+    {
+        unlink($url);
+    }
 }

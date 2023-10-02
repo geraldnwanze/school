@@ -9,8 +9,8 @@ class TeacherClassroom extends Model
 {
     use HasFactory;
 
-    protected $with = ['teacher', 'classroom'];
-    
+    // protected $with = ['teacher', 'classroom'];
+
     protected $guarded = [];
 
     public function classroom()

@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('sub_classrooms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('classroom_id')->references('id')->on('classrooms')->cascadeOnDelete();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('status')->default(StatusEnum::ACTIVE->value);
             $table->timestamps();
         });

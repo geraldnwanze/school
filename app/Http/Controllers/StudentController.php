@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Enums\GenderEnum;
 use App\Enums\StatusEnum;
-use App\Http\Requests\StoreStudentRequest;
-use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Classroom;
 use App\Models\Student;
 
@@ -14,12 +12,9 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::paginate();
-        return view('students.index', compact('students'));
-    }
-
-    public function store(StoreStudentRequest $request)
-    {
-
+        $classes = Classroom::all();
+        $genders = GenderEnum::cases();
+        return view('students.index', compact('students', 'classes', 'genders'));
     }
 
     public function activate(Student $student)

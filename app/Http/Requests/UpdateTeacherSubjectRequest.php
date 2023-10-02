@@ -2,16 +2,18 @@
 
 namespace App\Http\Requests;
 
+use App\Traits\SendValidationErrorsToToast;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTeacherSubjectRequest extends FormRequest
 {
+    use SendValidationErrorsToToast;
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +24,8 @@ class UpdateTeacherSubjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'teacher_id' => 'required',
+            'subject_id' => 'required|array'
         ];
     }
 }

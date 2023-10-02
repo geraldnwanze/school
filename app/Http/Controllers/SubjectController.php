@@ -11,7 +11,7 @@ class SubjectController extends Controller
 
     public function index()
     {
-        $subjects = Subject::all();
+        $subjects = Subject::paginate();
         return view('subjects.index', compact('subjects'));
     }
 
@@ -25,7 +25,7 @@ class SubjectController extends Controller
         try {
             Subject::create($request->validated());
             toast('subject created', 'success');
-            return to_route('subjects.index');
+            return back();
         } catch (\Throwable $th) {
             toast('something went wrong', 'error');
             return back();
@@ -42,7 +42,7 @@ class SubjectController extends Controller
         try {
             $subject->update($request->validated());
             toast('subject updated', 'success');
-            return to_route('subjects.index');
+            return back();
         } catch (\Throwable $th) {
             toast('something went wrong', 'error');
             return back();

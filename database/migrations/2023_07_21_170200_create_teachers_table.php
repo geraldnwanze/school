@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\RoleEnum;
 use App\Enums\StatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,15 +16,13 @@ return new class extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->string('login_id');
-            $table->string('password')->default(123);
-            $table->string('name');
+            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->string('name')->index();
             $table->string('phone');
             $table->text('address');
             $table->text('passport');
             $table->string('marital_status');
             $table->date('date_of_employment');
-            $table->string('status')->default(StatusEnum::ACTIVE->value);
             $table->timestamps();
         });
     }
